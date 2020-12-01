@@ -18,11 +18,10 @@ for x in values:
     diff = year - x
     for y in values:
         diff2 = diff - y
-        if(diff2 > 0):
-            if(diff2 in values):
-              print("Part 2: "+ str(diff2*x*y))
-              found = True
-              break
+        if(diff2 > 0 and diff2 in values):
+            print("Part 2: "+ str(diff2*x*y))
+            found = True
+            break
     if(found):
         break
 
