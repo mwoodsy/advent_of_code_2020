@@ -5,9 +5,9 @@ datafile = 'data/day02.txt'
 with open(datafile) as f:
     values = list(f.read().splitlines())
 
-def isPasswordValidPart1(pw, c, min, max):
+def isPasswordValidPart1(pw, c, mn, mx):
     count = len(pw.split(c))-1
-    return (min <= count and count <= max)
+    return (mn <= count and count <= mx)
 
 def isPasswordValidPart2(pw, c, pos1, pos2):
     t = pw[pos1-1] + '' + pw[pos2-1]
@@ -17,14 +17,14 @@ def isPasswordValidPart2(pw, c, pos1, pos2):
 
 part1Count = 0
 part2Count = 0
-for x in values:
-    temp = x.split(" ")
+for l in values:
+    temp = l.split(" ")
     p = temp[2]
     c = temp[1][0]
-    mn, mx = temp[0].split("-")
-    if (isPasswordValidPart1(p, c, int(mn), int(mx))):
+    v1, v2 = temp[0].split("-")
+    if (isPasswordValidPart1(p, c, int(v1), int(v2))):
         part1Count += 1
-    if (isPasswordValidPart2(p, c, int(mn), int(mx))):
+    if (isPasswordValidPart2(p, c, int(v1), int(v2))):
         part2Count += 1
     
 print("Part 1: %s" % part1Count)
