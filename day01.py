@@ -4,15 +4,16 @@ start_time = time.time()
 datafile = 'data/day01.txt'
 with open(datafile) as f:
     values = list(map(int, f.read().splitlines()))
-
 year = 2020
 
+## part 1
 for x in values:
     diff = year - x
     if(diff in values):
         print("Part 1: "+ str(diff*x))
         break
-
+    
+## part 2
 for x in values:
     found = False
     diff = year - x
