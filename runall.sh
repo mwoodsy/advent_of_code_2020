@@ -7,6 +7,8 @@ echo "-- Day 01 --"
 python day01.py
 echo "-- Day 02 --"
 python day02.py
+echo "-- Day 03 --"
+python day03.py
 
 
 end=$(python timestamp.py) 
