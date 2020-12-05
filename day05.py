@@ -27,6 +27,7 @@ for seat in values:
     seatChart[row[0]][column[0]] = sV
 
 print("Part 1: %s" % max(seatValues))
+
 r1 = 0
 for x in seatChart:
     s1 = 0
@@ -39,5 +40,6 @@ for x in seatChart:
                     break
         s1 += 1
     r1 += 1
+    
 print("Part 2: %s" % mySeat)
 print("--- %s seconds ---" % (time.time() - start_time))
