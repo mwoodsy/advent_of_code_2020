@@ -7,27 +7,25 @@ with open(datafile) as f:
 
 questionaire = [0]*26
 questionaire2 = [0]*26
-qSum = 0
+qSum1 = 0
 qSum2 = 0
 groupMembers = 0
 for q in values:
     if (q == ""):
-        qSum += sum(questionaire)
-        qSum2 += questionaire2.count(groupMembers)
+        qSum1 += 26 - questionaire.count(0)
+        qSum2 += questionaire.count(groupMembers)
         questionaire = [0]*26
-        questionaire2 = [0]*26
         groupMembers = 0
     else:
         groupMembers += 1
         for a in q:
             i = ord(a) - 97
-            questionaire[i] = 1
-            questionaire2[i] += 1 
+            questionaire[i] += 1 
     
-qSum += sum(questionaire)
-qSum2 += questionaire2.count(groupMembers)
+qSum1 += 26 - questionaire.count(0)
+qSum2 += questionaire.count(groupMembers)
 
 
-print("Part 1: %s" % qSum)
+print("Part 1: %s" % qSum1)
 print("Part 2: %s" % qSum2)
 print("--- %s seconds ---" % (time.time() - start_time))
