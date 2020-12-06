@@ -6,7 +6,6 @@ with open(datafile) as f:
     values = list(f.read().splitlines())
 
 questionaire = [0]*26
-questionaire2 = [0]*26
 qSum1 = 0
 qSum2 = 0
 groupMembers = 0
@@ -28,4 +27,5 @@ qSum2 += questionaire.count(groupMembers)
 
 print("Part 1: %s" % qSum1)
 print("Part 2: %s" % qSum2)
+
 print("--- %s seconds ---" % (time.time() - start_time))
