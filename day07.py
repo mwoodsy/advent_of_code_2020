@@ -28,14 +28,10 @@ for x in values:
             bagRules[temp[0]]["counts"].append(int(t[0]))
         
 
-def canBagContainGoldBag(b):
-    temp = bagRules[b]
-    if(len(temp['bags']) == 0):
-        return False
-    for x in range(len(temp['bags'])):
-        if(temp['bags'][x] == "shiny_gold"):
-            return True
-        elif(canBagContainGoldBag(temp['bags'][x])):
+def canBagContainGoldBag(bag):
+    b = bagRules[bag]
+    for x in range(len(b['bags'])):
+        if(b['bags'][x] == "shiny_gold" or canBagContainGoldBag(b['bags'][x])):
             return True
     return False
 
