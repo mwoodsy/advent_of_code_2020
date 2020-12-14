@@ -11,6 +11,7 @@ for i in range(len(data)):
 width = len(data) - 1
 height = len(data[0]) - 1
 data2 = copy.deepcopy(data)
+
 def checkSeats(x,y):
     sit = True
     seats = []
