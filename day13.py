@@ -53,11 +53,6 @@ while True:
         part2 = last
         break
 
-
-
-
-
-
 print("Part 2: %s" % part2)
 
 print("--- %s seconds ---" % (time.time() - start_time))
